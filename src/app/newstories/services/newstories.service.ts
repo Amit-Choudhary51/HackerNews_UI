@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpService } from './http.service';
+import { API } from '../models/apiconstants';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NewstoriesService {
 
-  private url = 'https://localhost:44382/api/NewStories';
-     
-  constructor(private httpClient: HttpClient) { }  
+export class NewstoriesService {   
+
+  constructor(private httpService: HttpService) { }   
   
-
+  // get new stories
   getnewstories(){    
-    return this.httpClient.get(this.url);
+    return  this.httpService.httpGet(API.NewStories);    
   }  
 }
-

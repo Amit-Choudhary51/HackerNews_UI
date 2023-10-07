@@ -1,14 +1,13 @@
-  <div class="example-header">
+
+  <div class="example-header">   
     <mat-form-field>     
       <mat-label>Filter stories</mat-label>
     <input matInput placeholder="" search (keyup)="applyFilter($event)">
     </mat-form-field>
   </div>
   
-  <div class="example-container mat-elevation-z8">
-  
-    <mat-table [dataSource]="dataSource" matSort>  
-     
+  <div class="example-container mat-elevation-z8">        
+    <mat-table [dataSource]="dataSource" matSort>        
       <ng-container matColumnDef="id">
         <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
         <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
@@ -31,6 +30,6 @@
       </mat-row>
     </mat-table>
   
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="select page of new stories"></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="select page of new stories"></mat-paginator>  
   </div>
   

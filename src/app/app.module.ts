@@ -8,10 +8,13 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 import { AppComponent } from './app.component';
 
 import { NewstoriesComponent } from './newstories/newstories.component';
-import { NewstoriesService } from './newstories/services/newstories.service';
+import { NewstoriesService} from './newstories/services/newstories.service';
+import { HttpService} from './newstories/services/http.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -28,9 +31,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSortModule,
     MatFormFieldModule,
     MatInputModule,
+    MatProgressSpinnerModule,
     BrowserAnimationsModule    
   ],
-  providers: [NewstoriesService],
+  providers: [NewstoriesService,HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
